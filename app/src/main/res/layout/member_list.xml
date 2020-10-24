@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:text="user_id"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/user_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:layout_below="@+id/user_id"
+        android:text="user_password"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:layout_below="@+id/user_password"
+        android:text="user_name"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/user_itqid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:layout_below="@+id/user_name"
+        android:text="user_itqid"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/user_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:layout_below="@+id/user_itqid"
+        android:text="user_sex"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/user_hobby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:layout_below="@+id/user_sex"
+        android:text="user_hobby"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/user_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:layout_below="@+id/user_hobby"
+        android:text="user_phone"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/user_hphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:layout_below="@+id/user_phone"
+        android:text="user_hphone"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/user_zipcode1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:layout_below="@+id/user_hphone"
+        android:text="user_zipcode1"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/user_zipcode2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:layout_below="@+id/user_zipcode1"
+        android:text="user_zipcode2"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/user_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:layout_below="@+id/user_zipcode2"
+        android:text="user address1"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/user_address_etc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:ellipsize="none"
+        android:maxLines="100"
+        android:scrollHorizontally="false"
+        android:layout_below="@+id/user_address"
+        android:text="user address2"
+        android:textSize="12sp"/>
+
+</RelativeLayout>

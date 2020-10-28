@@ -86,49 +86,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void readFunction() {
-        try {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-
-            OkHttpClient client = new OkHttpClient();
-
-            HttpUrl.Builder urlBuilder = HttpUrl.parse("http://114.71.61.251/~sjjang/member/android/read.php").newBuilder();
-
-            String url = urlBuilder.build().toString();
-
-            Request request = new Request.Builder()
-                    .url(url)
-                    .build();
-
-            client.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                    Log.d(TAG, "----- Read Func " + e + " -----");
-                }
-
-                @Override
-                public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                    try {
-                        String data = response.body().string();
-
-                        if (data != null) {
-                            memberListDataArray = new JSONArray(data);
-                            isReadFirst = true;
-
-                            Log.d(TAG, "----- Member Data Size is : " + memberListDataArray.length());
-                        }
-
-                    } catch (IOException | JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-            memberListAdapter.notifyDataSetChanged();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
     }
 

@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                             memberListDataArray = new JSONArray(data);
                             isReadFirst = true;
 
-                            Log.d(TAG, "-----" + memberListDataArray.length());
+                            Log.d(TAG, "----- Member Data Size is : " + memberListDataArray.length());
                         }
 
                     } catch (IOException | JSONException e) {

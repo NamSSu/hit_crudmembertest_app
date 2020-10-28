@@ -160,7 +160,72 @@ public class MemberViewActivity extends AppCompatActivity {
     }
 
     public void createFunction() {
+        try {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
 
+            OkHttpClient client = new OkHttpClient();
+
+            HttpUrl.Builder urlBuilder = HttpUrl.parse("http://114.71.61.251/~sjjang/member/android/create.php").newBuilder();
+            urlBuilder.addQueryParameter("id", idEditText.getText().toString());
+            urlBuilder.addQueryParameter("pswd", passwordEditText.getText().toString());
+            urlBuilder.addQueryParameter("name", nameEditText.getText().toString());
+            urlBuilder.addQueryParameter("itqid", itqidEditText.getText().toString());
+            urlBuilder.addQueryParameter("sex", sexEditText.getText().toString());
+            urlBuilder.addQueryParameter("hobby", hobbyEditText.getText().toString());
+            urlBuilder.addQueryParameter("phone", phoneEditText.getText().toString());
+            urlBuilder.addQueryParameter("hphone", hphoneEditText.getText().toString());
+            urlBuilder.addQueryParameter("zipcode1", zipcode1EditText.getText().toString());
+            urlBuilder.addQueryParameter("zipcode2", zipcode2EditText.getText().toString());
+            urlBuilder.addQueryParameter("address", addressEditText.getText().toString());
+            urlBuilder.addQueryParameter("address_etc", addressetcEditText.getText().toString());
+
+            String url = urlBuilder.build().toString();
+
+            Request request = new Request.Builder()
+                    .url(url)
+                    .build();
+
+            client.newCall(request).enqueue(new Callback() {
+                @Override
+                public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                    Log.d(TAG, "----- Create Func " + e + " -----");
+                }
+
+                @Override
+                public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                    try {
+                        String data = response.body().string();
+
+                        if (data != null) {
+                            if (data.contains("success create")) {
+                                makeToast("생성 되었습니다.");
+                                finish();
+
+                            } else if (data.contains("failed create")) {
+                                makeToast("생성이 되지 않았습니다.");
+
+                            } else if (data.contains("no name")) {
+                                makeToast("이름 항목이 없습니다.");
+
+                            } else if (data.contains("no id")) {
+                                makeToast("아이디 항목이 없습니다.");
+
+                            } else if (data.contains("no pswd")) {
+                                makeToast("비밀번호 항목이 없습니다.");
+
+                            }
+                        }
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void changeFunction() {
